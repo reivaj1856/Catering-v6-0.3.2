@@ -1,0 +1,112 @@
+﻿@{
+    ViewBag.Title = "Reservas para Eventos";
+}
+
+<main>
+    <div class="container px-5 my-5">
+        <div class="text-center">
+            <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Reserva tu evento</span></h1>
+        </div>
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-11 col-xl-9 col-xxl-8">
+                <!-- Sección de Eventos -->
+                <section class="py-5">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <h2 class="text-primary fw-bolder mb-0">Tipos de eventos</h2>
+                        <!-- Botón para hacer reserva -->
+                        <a class="btn btn-primary px-4 py-3" href="#formularioReserva">
+                            <div class="d-inline-block bi bi-calendar-plus me-2"></div>
+                            Reservar ahora
+                        </a>
+                    </div>
+                    <!-- Lista de tipos de eventos -->
+                    <div class="mb-0">
+                        <div class="row row-cols-1 row-cols-md-3 mb-4">
+                            <div class="col mb-4 mb-md-0">
+                                <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Cumpleaños</div>
+                            </div>
+                            <div class="col mb-4 mb-md-0">
+                                <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Matrimonios</div>
+                            </div>
+                            <div class="col">
+                                <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Eventos corporativos</div>
+                            </div>
+                        </div>
+                        <div class="row row-cols-1 row-cols-md-3">
+                            <div class="col mb-4 mb-md-0">
+                                <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Graduaciones</div>
+                            </div>
+                            <div class="col mb-4 mb-md-0">
+                                <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Fiestas infantiles</div>
+                            </div>
+                            <div class="col">
+                                <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Aniversarios</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Contenido de la página -->
+    <div class="container px-5 my-5">
+        <div class="text-center mb-5">
+            <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Reserva tu Evento</span></h1>
+            <p class="mt-3">Completa el formulario para reservar nuestro servicio de catering para tu evento especial.</p>
+        </div>
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-11 col-xl-9 col-xxl-8">
+                <!-- Formulario de Reserva -->
+                <section class="py-5">
+                    <div class="card shadow border-0 rounded-4 mb-5">
+                        <div class="card-body p-5">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="nombre" class="form-label">Nombre completo</label>
+                                    <input type="text" class="form-control" id="nombre" placeholder="Tu nombre completo" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="correo" class="form-label">Correo electrónico</label>
+                                    <input type="email" class="form-control" id="correo" placeholder="tucorreo@ejemplo.com" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="telefono" class="form-label">Teléfono</label>
+                                    <input type="tel" class="form-control" id="telefono" placeholder="Ej. 71234567" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="fecha" class="form-label">Fecha del evento</label>
+                                    <input type="date" class="form-control" id="fecha" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="hora" class="form-label">Hora del evento</label>
+                                    <input type="time" class="form-control" id="hora" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="tipoEvento" class="form-label">Tipo de evento</label>
+                                    <select class="form-select" id="tipoEvento" required>
+                                        <option selected disabled value="">Selecciona un tipo de evento</option>
+                                        <option>Boda</option>
+                                        <option>Cumpleaños</option>
+                                        <option>Evento Corporativo</option>
+                                        <option>Otro</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="invitados" class="form-label">Número de invitados</label>
+                                    <input type="number" class="form-control" id="invitados" min="1" placeholder="Ej. 50" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="comentarios" class="form-label">Comentarios adicionales</label>
+                                    <textarea class="form-control" id="comentarios" rows="4" placeholder="Especifica algún requerimiento especial..."></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary px-4 py-2">Enviar Reserva</button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Contacto";
+}
+<main aria-labelledby="title">
+    <section class="page-section" id="contact">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Contáctanos</h2>
+                <h3 class="section-subheading text-muted">Estamos encantados de ayudarte con tu evento.</h3>
+            </div>
+
+            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                <div class="row align-items-stretch mb-5">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <!-- Nombre -->
+                            <input class="form-control" id="name" type="text" placeholder="Tu Nombre *" data-sb-validations="required" />
+                            <div class="invalid-feedback" data-sb-feedback="name:required">El nombre es obligatorio.</div>
+                        </div>
+                        <div class="form-group">
+                            <!-- Correo electrónico -->
+                            <input class="form-control" id="email" type="email" placeholder="Tu Correo Electrónico *" data-sb-validations="required,email" />
+                            <div class="invalid-feedback" data-sb-feedback="email:required">El correo es obligatorio.</div>
+                            <div class="invalid-feedback" data-sb-feedback="email:email">El correo no es válido.</div>
+                        </div>
+                        <div class="form-group mb-md-0">
+                            <!-- Teléfono -->
+                            <input class="form-control" id="phone" type="tel" placeholder="Tu Teléfono *" data-sb-validations="required" />
+                            <div class="invalid-feedback" data-sb-feedback="phone:required">El número de teléfono es obligatorio.</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group form-group-textarea mb-md-0">
+                            <!-- Mensaje -->
+                            <textarea class="form-control" id="message" placeholder="Tu Mensaje *" data-sb-validations="required"></textarea>
+                            <div class="invalid-feedback" data-sb-feedback="message:required">El mensaje es obligatorio.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mensaje de éxito -->
+                <div class="d-none" id="submitSuccessMessage">
+                    <div class="text-center text-white mb-3">
+                        <div class="fw-bolder">¡Mensaje enviado con éxito!</div>
+                        Para activar este formulario, regístrate en
+                        <br />
+                        <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                    </div>
+                </div>
+
+                <!-- Mensaje de error -->
+                <div class="d-none" id="submitErrorMessage">
+                    <div class="text-center text-danger mb-3">¡Error al enviar el mensaje!</div>
+                </div>
+
+                <!-- Botón de envío -->
+                <div class="text-center">
+                    <button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Enviar Mensaje</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
