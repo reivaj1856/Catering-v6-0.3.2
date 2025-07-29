@@ -12,7 +12,8 @@
     <!-- Barra superior de navegación -->
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Marca de la barra de navegación -->
-        <a class="navbar-brand ps-3" href="index.html">Pagina Administrador</a>
+        <a class="navbar-brand ps-3 " @Html.ActionLink("Página Administrador", "Index", "Home", new { area = "" }, new { @class = "navbar-brand ps-3" })
+</a>
 
         <!-- Botón para colapsar la barra lateral -->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!">
@@ -22,10 +23,7 @@
         <!-- Buscador en la barra superior -->
         <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
             <div class="input-group">
-                <input class="form-control" type="text" placeholder="Buscar..." aria-label="Buscar..." aria-describedby="btnNavbarSearch" />
-                <button class="btn btn-primary" id="btnNavbarSearch" type="button">
-                    <i class="fas fa-search"></i>
-                </button>
+                
             </div>
         </form>
 
@@ -42,7 +40,7 @@
                     <li><a class="dropdown-item" href="#!">Cerrar sesión</a></li>
                 </ul>
             </li>
-        </ul>   
+        </ul>
     </nav>
 
     <!-- Estructura principal de la página -->
@@ -53,9 +51,7 @@
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">Principal</div>
-                        <a class="nav-link" href="index.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Panel principal
+                        <a class="nav-link" @Html.ActionLink("Panel principal", "Index", "Home", new { area = "" }, new { @class = "navbar-brand ps-3" })  
                         </a>
 
                         <div class="sb-sidenav-menu-heading">Interfaz</div>
@@ -66,10 +62,9 @@
                         </a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="layout-static.html">Meseros</a>
-                                <a class="nav-link" href="layout-sidenav-light.html">Menus</a>
-                                <a class="nav-link" href="layout-sidenav-light.html">Bad Tender</a>
-                                <a class="nav-link" href="layout-sidenav-light.html">Otros</a>
+                                <a class="nav-link" @Html.ActionLink("Meseros", "Meseros", "Home", new { area = "" }, new { @class = "navbar-brand ps-3" })</a>
+                                <a class="nav-link" @Html.ActionLink("Menus", "Menu", "Home", new { area = "" }, new { @class = "navbar-brand ps-3" })</a>
+                                <a class="nav-link" @Html.ActionLink("Bad Tender", "BadTender", "Home", new { area = "" }, new { @class = "navbar-brand ps-3" })</a>
                             </nav>
                         </div>
 
@@ -86,9 +81,9 @@
                                 </a>
                                 <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                     <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="login.html">Finalizados</a>
-                                        <a class="nav-link" href="register.html">Confirmados</a>
-                                        <a class="nav-link" href="password.html">Pendientes</a>
+                                        <a class="nav-link" @Html.ActionLink("Finalizados", "Finalizados", "Home", new { area = "" }, new { @class = "navbar-brand ps-3" })</a>
+                                        <a class="nav-link" @Html.ActionLink("Confirmados", "Confirmados", "Home", new { area = "" }, new { @class = "navbar-brand ps-3" })</a>
+                                        <a class="nav-link" @Html.ActionLink("Pendientes", "Pendiente", "Home", new { area = "" }, new { @class = "navbar-brand ps-3" })</a>
                                     </nav>
                                 </div>
 
@@ -98,21 +93,21 @@
                                 </a>
                                 <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                     <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="401.html">Logistica</a>
-                                        <a class="nav-link" href="404.html">Personal</a>
+                                        <a class="nav-link" @Html.ActionLink("Logistica", "logistica", "Home", new { area = "" }, new { @class = "navbar-brand ps-3" })</a>
+                                        <a class="nav-link" @Html.ActionLink("Personal", "Personal", "Home", new { area = "" }, new { @class = "navbar-brand ps-3" })</a>
                                     </nav>
                                 </div>
                             </nav>
                         </div>
 
                         <div class="sb-sidenav-menu-heading">Administracion</div>
-                        <a class="nav-link" href="charts.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                            Personal
+                        <a class="nav-link">
+                            
+                            @Html.ActionLink("Personal", "Personal", "Home", new { area = "" }, new { @class = "navbar-brand ps-3" })
                         </a>
                         <a class="nav-link" href="tables.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Ingresos
+                            @Html.ActionLink("Ingresos", "Ingresos", "Home", new { area = "" }, new { @class = "navbar-brand ps-3" })
+                        </a>
                         </a>
                     </div>
                 </div>

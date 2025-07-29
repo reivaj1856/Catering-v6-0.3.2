@@ -1,0 +1,115 @@
+﻿@{
+    ViewBag.Title = "Página de Inicio";
+}
+
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Logistica</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">Logistica</li>
+        </ol>
+        
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i>
+                Servicios
+            </div>
+            <div class="card-body">
+                <table id="datatablesSimple" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>nombre</th>
+                            <th>detalle</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>id</th>
+                            <th>nombre</th>
+                            <th>detalle</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td>101</td>
+                            <td>Montaje de mesas y sillas</td>
+                            <td>Distribución y organización para banquete</td>
+                            <td>Disponible</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar">
+                                    <i class="fas fa-edit"></i> Editar
+                                </button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)">
+                                    <i class="fas fa-trash-alt"></i> Eliminar
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>102</td>
+                            <td>Transporte de alimentos</td>
+                            <td>Camiones refrigerados para traslado seguro</td>
+                            <td>Disponible</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar">
+                                    <i class="fas fa-edit"></i> Editar
+                                </button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)">
+                                    <i class="fas fa-trash-alt"></i> Eliminar
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>103</td>
+                            <td>Gestión de personal de servicio</td>
+                            <td>Supervisión y asignación de meseros y cocineros</td>
+                            <td>Disponible</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar">
+                                    <i class="fas fa-edit"></i> Editar
+                                </button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)">
+                                    <i class="fas fa-trash-alt"></i> Eliminar
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>104</td>
+                            <td>Coordinación con proveedores</td>
+                            <td>Logística de insumos, bebidas y menaje</td>
+                            <td>Disponible</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar">
+                                    <i class="fas fa-edit"></i> Editar
+                                </button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)">
+                                    <i class="fas fa-trash-alt"></i> Eliminar
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>105</td>
+                            <td>Instalación de estaciones de comida</td>
+                            <td>Montaje de buffet y barras de autoservicio</td>
+                            <td>Disponible</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar">
+                                    <i class="fas fa-edit"></i> Editar
+                                </button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)">
+                                    <i class="fas fa-trash-alt"></i> Eliminar
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</main>

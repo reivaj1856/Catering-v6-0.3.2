@@ -1,0 +1,313 @@
+﻿@{
+    ViewBag.Title = "Página de Meseros";
+}
+
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Meseros</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">Lista de meseros</li>
+        </ol>
+
+
+        <div class="card mb-4">
+            <div class="card-header bg-warning">
+                <i class="fas fa-table me-1"></i>
+                Lista de meseros contratados
+            </div>
+            <div class="p-3">
+                <div class="btn-group" role="group">
+                    <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-plus"></i> Agregar Mesero</button>
+                </div>
+            </div>
+            <div class="card-body">
+                <table id="datatablesSimple" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Puesto</th>
+                            <th>Sucursal</th>
+                            <th>Edad</th>
+                            <th>Fecha de ingreso</th>
+                            <th>Salario (Bs)</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Puesto</th>
+                            <th>Sucursal</th>
+                            <th>Edad</th>
+                            <th>Fecha de ingreso</th>
+                            <th>Salario (Bs)</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td>Carlos Pérez</td>
+                            <td>Mesero</td>
+                            <td>New York</td>
+                            <td>28</td>
+                            <td>2021/06/15</td>
+                            <td>Bs 174,000</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-edit"></i> Editar</button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Ana Gómez</td>
+                            <td>Mesera</td>
+                            <td>London</td>
+                            <td>32</td>
+                            <td>2020/04/08</td>
+                            <td>Bs 191,400</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-edit"></i> Editar</button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jorge Ramírez</td>
+                            <td>Mesero</td>
+                            <td>San Francisco</td>
+                            <td>24</td>
+                            <td>2022/01/12</td>
+                            <td>Bs 165,648</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-edit"></i> Editar</button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Luisa Fernández</td>
+                            <td>Mesera</td>
+                            <td>Tokyo</td>
+                            <td>29</td>
+                            <td>2021/11/20</td>
+                            <td>Bs 182,352</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-edit"></i> Editar</button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>David Torres</td>
+                            <td>Mesero</td>
+                            <td>Edimburgo</td>
+                            <td>26</td>
+                            <td>2023/02/01</td>
+                            <td>Bs 170,520</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-edit"></i> Editar</button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>María López</td>
+                            <td>Mesera</td>
+                            <td>Singapur</td>
+                            <td>30</td>
+                            <td>2020/07/25</td>
+                            <td>Bs 194,880</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-edit"></i> Editar</button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fernando Ríos</td>
+                            <td>Mesero</td>
+                            <td>London</td>
+                            <td>27</td>
+                            <td>2021/09/13</td>
+                            <td>Bs 180,144</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-edit"></i> Editar</button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Camila Herrera</td>
+                            <td>Mesera</td>
+                            <td>San Francisco</td>
+                            <td>22</td>
+                            <td>2022/05/30</td>
+                            <td>Bs 158,280</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-edit"></i> Editar</button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Roberto Díaz</td>
+                            <td>Mesero</td>
+                            <td>New York</td>
+                            <td>35</td>
+                            <td>2019/03/17</td>
+                            <td>Bs 204,048</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-edit"></i> Editar</button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Laura Castillo</td>
+                            <td>Mesera</td>
+                            <td>Tokyo</td>
+                            <td>25</td>
+                            <td>2022/08/10</td>
+                            <td>Bs 167,136</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-edit"></i> Editar</button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sebastián Morales</td>
+                            <td>Mesero</td>
+                            <td>Edimburgo</td>
+                            <td>31</td>
+                            <td>2020/10/05</td>
+                            <td>Bs 193,488</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-edit"></i> Editar</button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Isabela Navarro</td>
+                            <td>Mesera</td>
+                            <td>London</td>
+                            <td>23</td>
+                            <td>2021/12/22</td>
+                            <td>Bs 162,288</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-edit"></i> Editar</button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Andrés Vega</td>
+                            <td>Mesero</td>
+                            <td>San Francisco</td>
+                            <td>34</td>
+                            <td>2018/06/02</td>
+                            <td>Bs 208,800</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-edit"></i> Editar</button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                            </td>
+                        </tr>
+                        <!-- Más meseros nuevos -->
+                        <tr>
+                            <td>Gabriela Martínez</td>
+                            <td>Mesera</td>
+                            <td>Miami</td>
+                            <td>28</td>
+                            <td>2023/03/15</td>
+                            <td>Bs 175,500</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-edit"></i> Editar</button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Marco Antonio</td>
+                            <td>Mesero</td>
+                            <td>Bogotá</td>
+                            <td>29</td>
+                            <td>2022/09/22</td>
+                            <td>Bs 178,200</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-edit"></i> Editar</button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Lucía Fernández</td>
+                            <td>Mesera</td>
+                            <td>Buenos Aires</td>
+                            <td>27</td>
+                            <td>2021/11/30</td>
+                            <td>Bs 169,800</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-edit"></i> Editar</button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Diego Ramírez</td>
+                            <td>Mesero</td>
+                            <td>Lima</td>
+                            <td>31</td>
+                            <td>2020/12/10</td>
+                            <td>Bs 185,760</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-edit"></i> Editar</button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de edición -->
+    <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="modalEditarLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalEditarLabel">Editar menú</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formEditar">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre">
+                        </div>
+                        <div class="mb-3">
+                            <label for="puesto" class="form-label">Puesto</label>
+                            <input type="text" class="form-control" id="puesto">
+                        </div>
+                        <div class="mb-3">
+                            <label for="puesto" class="form-label">Sucursal</label>
+                            <input type="text" class="form-control" id="sucursal">
+                        </div>
+                        <div class="mb-3">
+                            <label for="puesto" class="form-label">Edad</label>
+                            <input type="text" class="form-control" id="edad">
+                        </div>
+                        <div class="mb-3">
+                            <label for="puesto" class="form-label">Salario</label>
+                            <input type="text" class="form-control" id="salario">
+                        </div>
+                        <!-- Puedes agregar más campos aquí -->
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Guardar cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script>
+        function eliminarFila(boton) {
+            if (confirm("¿Estás seguro de que deseas eliminar este menú?")) {
+                const fila = boton.closest("tr");
+                fila.remove();
+            }
+        }
+    </script>
+
+</main>
+

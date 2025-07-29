@@ -1,0 +1,157 @@
+﻿@{
+    ViewBag.Title = "Página de Inicio";
+}
+
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Menus</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">Opciones de menus</li>
+        </ol>
+
+
+        <div class="card mb-4">
+            <div class="card-header bg-warning">
+                <i class="fas fa-table me-1"></i>
+                Lista de menús disponibles
+
+            </div>
+
+            <div class="p-3">
+                <div class="btn-group" role="group">
+                    <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-plus"></i> Agregar Menu</button>
+                </div>
+            </div>
+            <div class="card-body">
+                <table id="datatablesSimple" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Cantidad</th>
+                            <th>Paquete</th>
+                            <th>Fecha de ingreso</th>
+                            <th>Costo (Bs)</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Cantidad</th>
+                            <th>Paquete</th>
+                            <th>Fecha de ingreso</th>
+                            <th>Costo (Bs)</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td>Menú Marino</td>
+                            <td>2 opciones/100 personas</td>
+                            <td>Clásico</td>
+                            <td>2021/06/15</td>
+                            <td>Bs 1600,000</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-edit"></i> Editar</button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Menú Criollo</td>
+                            <td>3 opciones/150 personas</td>
+                            <td>Especial</td>
+                            <td>2022/03/20</td>
+                            <td>Bs 2100,000</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-edit"></i> Editar</button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Menú Vegetariano</td>
+                            <td>2 opciones/80 personas</td>
+                            <td>Ligero</td>
+                            <td>2023/01/10</td>
+                            <td>Bs 1450,000</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-edit"></i> Editar</button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Menú Gourmet</td>
+                            <td>5 opciones/200 personas</td>
+                            <td>Premium</td>
+                            <td>2022/12/05</td>
+                            <td>Bs 3200,000</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-edit"></i> Editar</button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Menú Infantil</td>
+                            <td>2 opciones/60 personas</td>
+                            <td>Básico</td>
+                            <td>2024/05/18</td>
+                            <td>Bs 1200,000</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-edit"></i> Editar</button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+       
+    </div>
+
+    <!-- Modal de edición -->
+    <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="modalEditarLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalEditarLabel">Editar menú</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formEditar">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre">
+                        </div>
+                        <div class="mb-3">
+                            <label for="puesto" class="form-label">Cantidad</label>
+                            <input type="text" class="form-control" id="cantidad">
+                        </div>
+                        <div class="mb-3">
+                            <label for="puesto" class="form-label">Paquete</label>
+                            <input type="text" class="form-control" id="paquete">
+                        </div>
+                        <div class="mb-3">
+                            <label for="puesto" class="form-label">Costo</label>
+                            <input type="text" class="form-control" id="costo">
+                        </div>
+                        <!-- Puedes agregar más campos aquí -->
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Guardar cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function eliminarFila(boton) {
+            if (confirm("¿Estás seguro de que deseas eliminar este menú?")) {
+                const fila = boton.closest("tr");
+                fila.remove();
+            }
+        }
+    </script>
+
+</main>

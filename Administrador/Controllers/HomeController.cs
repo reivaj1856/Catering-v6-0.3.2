@@ -13,14 +13,68 @@ namespace Administrador.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Meseros()
         {
             ViewBag.Message = "Your application description page.";
 
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult BadTender()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        public ActionResult Confirmados()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        public ActionResult Finalizados()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        public ActionResult Ingresos()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        public ActionResult logistica()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        public ActionResult Menu()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        public ActionResult Otros()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        public ActionResult Pendiente()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        public ActionResult Personal()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        public ActionResult PersonalRegister()
         {
             ViewBag.Message = "Your contact page.";
 

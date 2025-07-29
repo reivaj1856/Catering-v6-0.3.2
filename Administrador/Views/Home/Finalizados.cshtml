@@ -1,0 +1,134 @@
+﻿@{
+    ViewBag.Title = "Página de Servicios finalizados";
+}
+
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Servicios</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">Lista de servicios</li>
+        </ol>
+
+
+        <div class="card mb-4">
+            <div class="card-header bg-warning">
+                <i class="fas fa-table me-1"></i>
+                Lista de servicios contratados
+            </div>
+            <div class="p-3">
+                <div class="btn-group" role="group">
+                    <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-plus"></i> Agregar Servicio</button>
+                </div>
+            </div>
+            <div class="card-body">
+                <table id="datatablesSimple" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>nombre</th>
+                            <th>detalle</th>
+                            <th>Fecha de ingreso</th>
+                            <th>costo (Bs)</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>id</th>
+                            <th>nombre</th>
+                            <th>detalle</th>
+                            <th>Fecha de ingreso</th>
+                            <th>costo (Bs)</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td>43</td>
+                            <td>sin nombre</td>
+                            <td>paquete premium</td>
+                            <td>2020/07/25</td>
+                            <td>Bs 1500,880</td>
+                            <td>Finalizado</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-edit"></i> Editar</button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>46</td>
+                            <td>Servicio de mozos</td>
+                            <td>Incluye 5 meseros para 100 personas</td>
+                            <td>2023/01/15</td>
+                            <td>Bs 950,300</td>
+                            <td>Finalizado</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-edit"></i> Editar</button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                            </td>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de edición -->
+    <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="modalEditarLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalEditarLabel">Editar menú</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formEditar">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre">
+                        </div>
+                        <div class="mb-3">
+                            <label for="puesto" class="form-label">Puesto</label>
+                            <input type="text" class="form-control" id="puesto">
+                        </div>
+                        <div class="mb-3">
+                            <label for="puesto" class="form-label">Sucursal</label>
+                            <input type="text" class="form-control" id="sucursal">
+                        </div>
+                        <div class="mb-3">
+                            <label for="puesto" class="form-label">Edad</label>
+                            <input type="text" class="form-control" id="edad">
+                        </div>
+                        <div class="mb-3">
+                            <label for="puesto" class="form-label">Salario</label>
+                            <input type="text" class="form-control" id="salario">
+                        </div>
+                        <!-- Puedes agregar más campos aquí -->
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Guardar cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        function eliminarFila(boton) {
+            if (confirm("¿Estás seguro de que deseas eliminar este menú?")) {
+                const fila = boton.closest("tr");
+                fila.remove();
+            }
+        }
+    </script>
+
+</main>
+

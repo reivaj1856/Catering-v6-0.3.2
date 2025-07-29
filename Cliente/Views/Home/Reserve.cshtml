@@ -1,0 +1,92 @@
+﻿@{
+    ViewBag.Title = "Reservas para Eventos";
+}
+
+<main>
+    <div class="container px-5 my-5">
+        <div class="text-center mb-5">
+            <h1 class="display-5 fw-bolder mb-0">
+                <span class="text-gradient d-inline">Reserva tu Evento</span>
+            </h1>
+            <p class="mt-3">Completa el formulario para reservar nuestro servicio de catering para tu evento especial.</p>
+        </div>
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-11 col-xl-9 col-xxl-8">
+                <!-- Sección de Eventos -->
+                <section class="py-0">
+
+                    <!-- Dropdown Tipo de Evento -->
+                    <div class="mb-4">
+                        <div class="row row-cols-1 row-cols-md-3">
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" id="tipoEventoDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Tipo de evento
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="tipoEventoDropdown">
+                                    <li><a class="dropdown-item" href="#" onclick="seleccionarEvento('Cumpleaños')">Cumpleaños</a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="seleccionarEvento('Boda')">Boda</a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="seleccionarEvento('Otro')">Otro</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <!-- Dropdown Tipo de Paquete -->
+                    <div class="mb-4">
+                        <div class="row row-cols-1 row-cols-md-3">
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" id="tipoPaqueteDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Tipo de paquete
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="tipoPaqueteDropdown">
+                                    <li><a class="dropdown-item" href="#" onclick="seleccionarPaquete('Esencial')">Esencial</a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="seleccionarPaquete('Clásico')">Clásico</a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="seleccionarPaquete('Elegancia')">Elegancia</a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="seleccionarPaquete('Premium')">Premium</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <!-- Selección de Fecha -->
+                    <div class="mb-3">
+                        <label for="fechaEvento" class="form-label">Fecha del evento</label>
+                        <input type="date" class="form-control" id="fechaEvento" name="fechaEvento" required>
+                    </div>
+
+                    <!-- Selección de Hora -->
+                    <div class="mb-3">
+                        <label for="horaEvento" class="form-label">Hora del evento</label>
+                        <input type="time" class="form-control" id="horaEvento" name="horaEvento" required>
+                    </div>
+
+                    <!-- Cantidad de personas -->
+                    <div class="mb-3">
+                        <label for="cantidadPersonas" class="form-label">Cantidad de personas</label>
+                        <input type="number" class="form-control" id="cantidadPersonas" name="cantidadPersonas" min="1" placeholder="Ej. 50" required>
+                    </div>
+                    <a class="btn btn-primary px-4 py-3" href="#formularioReserva">
+                        <div class="d-inline-block bi bi-calendar-plus me-2"></div>
+                        Reservar ahora
+                    </a>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script para actualizar texto de botones -->
+    <script>
+        function seleccionarEvento(texto) {
+            document.getElementById("tipoEventoDropdown").textContent = texto;
+        }
+
+        function seleccionarPaquete(texto) {
+            document.getElementById("tipoPaqueteDropdown").textContent = texto;
+        }
+    </script>
+
+</main>

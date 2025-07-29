@@ -1,0 +1,111 @@
+﻿@{
+    ViewBag.Title = "pagina de inicio";
+}
+
+<main>
+    <!-- Sección: Bloque de Diseño -->
+    <section class="py-0">
+        <!-- Jumbotron -->
+        <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+            <div class="container">
+                <div class="row gx-lg-5 align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        <h1 class="my-5 display-3 fw-bold ls-tight">
+                            La mejor opción <br />
+                            <span class="text-primary">para tu evento</span>
+                        </h1>
+                        <p style="color: hsl(217, 10%, 50.8%)">
+                            Ofrecemos un servicio de catering personalizado y de alta calidad para todo tipo de eventos.
+                            Ya sea una boda, cumpleaños o reunión corporativa, nos encargamos de cada detalle para que disfrutes al máximo.
+                        </p>
+                    </div>
+
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        <div class="card">
+                            <div class="card-body py-5 px-md-5">
+
+                                <div id="mensaje" class="mb-4" style="display:none;"></div>
+
+                                <form id="registroForm" method="post" action="/Usuario/Insertar">
+                                    <!-- Diseño de dos columnas para nombres -->
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            <div data-mdb-input-init class="form-outline">
+                                                <input type="text" id="Nombre" name="Nombre" class="form-control" required />
+                                                <label class="form-label" for="Nombre">Nombre</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <div data-mdb-input-init class="form-outline">
+                                                <input type="text" id="Apellido" name="Apellido" class="form-control" required />
+                                                <label class="form-label" for="Apellido">Apellido</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Campo de correo -->
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <input type="email" id="Correo" name="Correo" class="form-control" required />
+                                        <label class="form-label" for="Correo">Correo electrónico</label>
+                                    </div>
+
+                                    <!-- Campo de contraseña -->
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <input type="password" id="Contrasena" name="Contrasena" class="form-control" required />
+                                        <label class="form-label" for="Contrasena">Contraseña</label>
+                                    </div>
+
+                                    <!-- Botón de envío -->
+                                    <button type="submit" class="btn btn-primary btn-block mb-4">
+                                        Registrarse
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Jumbotron -->
+    </section>
+    <!-- Sección: Bloque de Diseño -->
+</main>
+
+<script>
+    const form = document.getElementById('registroForm');
+    const mensajeDiv = document.getElementById('mensaje');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Evita el submit por defecto
+
+        // Aquí normalmente enviarías el formulario por AJAX
+        // Simulemos una llamada asíncrona (ejemplo con fetch)
+
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => {
+                if (!response.ok) throw new Error('Error en la solicitud');
+                return response.json();  // Cambia a json porque el servidor devuelve JSON
+            })
+            .then(data => {
+                mensajeDiv.style.display = 'block';
+                if (data.success) {
+                    mensajeDiv.style.color = 'green';
+                    mensajeDiv.textContent = data.message;
+                    form.reset();
+                } else {
+                    mensajeDiv.style.color = 'red';
+                    mensajeDiv.textContent = data.message;
+                }
+            })
+            .catch(error => {
+                mensajeDiv.style.display = 'block';
+                mensajeDiv.style.color = 'red';
+                mensajeDiv.textContent = 'Error al registrar: ' + error.message;
+            });
+
+</script>

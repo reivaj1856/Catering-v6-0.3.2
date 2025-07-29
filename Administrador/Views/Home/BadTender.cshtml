@@ -1,0 +1,159 @@
+﻿@{
+    ViewBag.Title = "Página de Bad Tender";
+}
+
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Bad Tender</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">Lista de cantineros</li>
+        </ol>
+
+
+        <div class="card mb-4">
+            <div class="card-header bg-warning">
+                <i class="fas fa-table me-1"></i>
+                Lista de cantineros contratados
+            </div>
+            <div class="p-3">
+                <div class="btn-group" role="group">
+                    <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-plus"></i> Agregar Bad Tender</button>
+                </div>
+            </div>
+            <div class="card-body">
+                <table id="datatablesSimple" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Puesto</th>
+                            <th>Sucursal</th>
+                            <th>Edad</th>
+                            <th>Fecha de ingreso</th>
+                            <th>Salario (Bs)</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Puesto</th>
+                            <th>Sucursal</th>
+                            <th>Edad</th>
+                            <th>Fecha de ingreso</th>
+                            <th>Salario (Bs)</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                       
+                        <tr>
+                            <td>María López</td>
+                            <td>Bat Tender</td>
+                            <td>Singapur</td>
+                            <td>30</td>
+                            <td>2020/07/25</td>
+                            <td>Bs 194,880</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-edit"></i> Editar</button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fernando Ríos</td>
+                            <td>Bat Tender</td>
+                            <td>London</td>
+                            <td>27</td>
+                            <td>2021/09/13</td>
+                            <td>Bs 180,144</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-edit"></i> Editar</button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Camila Herrera</td>
+                            <td>Bat Tender</td>
+                            <td>San Francisco</td>
+                            <td>22</td>
+                            <td>2022/05/30</td>
+                            <td>Bs 158,280</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-edit"></i> Editar</button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                            </td>
+                        </tr>
+                       
+                        <tr>
+                            <td>Laura Castillo</td>
+                            <td>Bat Tender</td>
+                            <td>Tokyo</td>
+                            <td>25</td>
+                            <td>2022/08/10</td>
+                            <td>Bs 167,136</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-edit"></i> Editar</button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                            </td>
+                        </tr>
+                       
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de edición -->
+    <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="modalEditarLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalEditarLabel">Editar menú</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formEditar">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre">
+                        </div>
+                        <div class="mb-3">
+                            <label for="puesto" class="form-label">Puesto</label>
+                            <input type="text" class="form-control" id="puesto">
+                        </div>
+                        <div class="mb-3">
+                            <label for="puesto" class="form-label">Sucursal</label>
+                            <input type="text" class="form-control" id="sucursal">
+                        </div>
+                        <div class="mb-3">
+                            <label for="puesto" class="form-label">Edad</label>
+                            <input type="text" class="form-control" id="edad">
+                        </div>
+                        <div class="mb-3">
+                            <label for="puesto" class="form-label">Salario</label>
+                            <input type="text" class="form-control" id="salario">
+                        </div>
+                        <!-- Puedes agregar más campos aquí -->
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Guardar cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        function eliminarFila(boton) {
+            if (confirm("¿Estás seguro de que deseas eliminar este menú?")) {
+                const fila = boton.closest("tr");
+                fila.remove();
+            }
+        }
+    </script>
+
+</main>
+

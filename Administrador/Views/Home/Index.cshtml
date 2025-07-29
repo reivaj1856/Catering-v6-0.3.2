@@ -3,120 +3,149 @@
 }
 
 <main>
-    <div id="layoutSidenav">
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Resumen</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">Panel principal</li>
+        </ol>
+        <div class="row">
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-primary text-white mb-4">
+                    <div class="card-body">Meseros</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="#">View Details</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-warning text-white mb-4">
+                    <div class="card-body">Menus</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="#">View Details</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-success text-white mb-4">
+                    <div class="card-body">Bad tender</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="#">View Details</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-danger text-white mb-4">
+                    <div class="card-body">Otros</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="#">View Details</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <div id="layoutSidenav_content">
-            <main>
-                <div class="container-fluid px-4">
-                    <h1 class="mt-4">Tablero</h1>
-                    <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item active">Tablero</li>
-                    </ol>
-                    <div class="row">
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-primary text-white mb-4">
-                                <div class="card-body">Tarjeta Primaria</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">Ver Detalles</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-warning text-white mb-4">
-                                <div class="card-body">Tarjeta de Advertencia</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">Ver Detalles</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-success text-white mb-4">
-                                <div class="card-body">Tarjeta de Éxito</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">Ver Detalles</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-danger text-white mb-4">
-                                <div class="card-body">Tarjeta de Peligro</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">Ver Detalles</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-6">
-                            <div class="card mb-4">
-                                <div class="card-header">
-                                    <i class="fas fa-chart-area me-1"></i>
-                                    Gráfico de Área
-                                </div>
-                                <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6">
-                            <div class="card mb-4">
-                                <div class="card-header">
-                                    <i class="fas fa-chart-bar me-1"></i>
-                                    Grafica de ingresos
-                                </div>
-                                <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-4">
-                        <div class="card-header">
-                            <i class="fas fa-table me-1"></i>
-                            Personal
-                        </div>
-                        <div class="card-body">
-                            <table id="datatablesSimple">
-                                <thead>
-                                    <tr>
-                                        <th>Nombre</th>
-                                        <th>Cargo</th>
-                                        <th>Oficina</th>
-                                        <th>Edad</th>
-                                        <th>Fecha de Inicio</th>
-                                        <th>Salario</th>
-                                    </tr>
-                                </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th>Nombre</th>
-                                        <th>Cargo</th>
-                                        <th>Oficina</th>
-                                        <th>Edad</th>
-                                        <th>Fecha de Inicio</th>
-                                        <th>Salario</th>
-                                    </tr>
-                                </tfoot>
-                                <tbody>
-                                    <!-- Los datos de empleados están en inglés, pero si deseas también puedo traducir los nombres y cargos. -->
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </main>
-            <footer class="py-4 bg-light mt-auto">
-                <div class="container-fluid px-4">
-                    <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Tu Sitio Web 2023</div>
-                        <div>
-                            <a href="#">Política de Privacidad</a>
-                            &middot;
-                            <a href="#">Términos y Condiciones</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i>
+                Servicios
+            </div>
+            <div class="card-body">
+                <table id="datatablesSimple" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>nombre</th>
+                            <th>detalle</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>id</th>
+                            <th>nombre</th>
+                            <th>detalle</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td>201</td>
+                            <td>Montaje de mesas y sillas</td>
+                            <td>Distribución y organización para banquetes</td>
+                            <td>Disponible</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar">
+                                    <i class="fas fa-edit"></i> Editar
+                                </button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)">
+                                    <i class="fas fa-trash-alt"></i> Eliminar
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>202</td>
+                            <td>Transporte de alimentos</td>
+                            <td>Camiones refrigerados para mantener frescura</td>
+                            <td>Disponible</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar">
+                                    <i class="fas fa-edit"></i> Editar
+                                </button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)">
+                                    <i class="fas fa-trash-alt"></i> Eliminar
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>203</td>
+                            <td>Coordinación de eventos</td>
+                            <td>Supervisión general del montaje y tiempos</td>
+                            <td>Disponible</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar">
+                                    <i class="fas fa-edit"></i> Editar
+                                </button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)">
+                                    <i class="fas fa-trash-alt"></i> Eliminar
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>204</td>
+                            <td>Gestión de personal</td>
+                            <td>Organización de cocineros, mozos y encargados</td>
+                            <td>Disponible</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar">
+                                    <i class="fas fa-edit"></i> Editar
+                                </button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)">
+                                    <i class="fas fa-trash-alt"></i> Eliminar
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>205</td>
+                            <td>Montaje de estaciones de bebidas</td>
+                            <td>Instalación y equipamiento de barras móviles</td>
+                            <td>Disponible</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditar">
+                                    <i class="fas fa-edit"></i> Editar
+                                </button>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarFila(this)">
+                                    <i class="fas fa-trash-alt"></i> Eliminar
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </main>
